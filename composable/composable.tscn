@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8es86qcbwpco"]
+
+[ext_resource type="Script" path="res://scripts/composable/Composable.gd" id="1_ujk23"]
+
+[node name="Composable" type="RigidBody3D"]
+script = ExtResource("1_ujk23")

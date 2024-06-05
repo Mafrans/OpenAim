@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://f2tkmt18cc33"]
+
+[ext_resource type="PackedScene" uid="uid://dleur16m0000b" path="res://scenario_loader.tscn" id="1_ctxi0"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_dpd2s"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jt020"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_prrdn"]
+
+[sub_resource type="Sky" id="Sky_rhmsj"]
+sky_material = SubResource("ProceduralSkyMaterial_prrdn")
+
+[sub_resource type="Environment" id="Environment_8k58y"]
+background_mode = 2
+sky = SubResource("Sky_rhmsj")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_dpd2s")
+
+[node name="ScenarioLoader" parent="." instance=ExtResource("1_ctxi0")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_jt020")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8k58y")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.935271, 0.353932, 0, -0.353932, 0.935271, -1.90735e-06, 6.37866, 11.309)

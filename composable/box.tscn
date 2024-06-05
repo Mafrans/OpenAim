@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d14ouqqtis1nb"]
+
+[ext_resource type="Script" path="res://scripts/composable/Box.gd" id="1_k7nda"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ebgpr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ta3nj"]
+
+[node name="Box" type="StaticBody3D"]
+script = ExtResource("1_k7nda")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ebgpr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ta3nj")

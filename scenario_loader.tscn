@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dleur16m0000b"]
+
+[ext_resource type="Script" path="res://scripts/ScenarioLoader.gd" id="1_s6una"]
+
+[node name="ScenarioLoader" type="Node"]
+script = ExtResource("1_s6una")

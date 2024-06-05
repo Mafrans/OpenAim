@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://f6rsl0a2u61d"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_d36n7"]
+[ext_resource type="Script" path="res://scripts/lua/LuaPlayer.gd" id="2_uihlj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m4sn2"]
+radius = 0.368445
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_d36n7")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_m4sn2")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.507335, 0)
+script = ExtResource("2_uihlj")
+
+[node name="ShootRaycast" type="RayCast3D" parent="Camera"]
+target_position = Vector3(0, 0, -999)
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
